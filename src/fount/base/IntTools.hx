@@ -1,0 +1,88 @@
+package fount.base;
+
+import haxe.Int32;
+
+using fount.Core;
+
+class IntTools {
+    public static inline final MIN: Int32 = 0x80000000;
+    public static inline final MAX: Int32 = 0x7fffffff;
+
+    public static inline function eq(i1: Int, i2: Int): Bool {
+        return i1 == i2;
+    }
+
+    public static inline function ne(i1: Int, i2: Int): Bool {
+        return i1 != i2;
+    }
+
+    public static inline function cmp(i1: Int, i2: Int): Int {
+        return i1 - i2;
+    }
+
+    public static inline function lt(i1: Int, i2: Int): Bool {
+        return i1 < i2;
+    }
+
+    public static inline function le(i1: Int, i2: Int): Bool {
+        return i1 <= i2;
+    }
+
+    public static inline function gt(i1: Int, i2: Int): Bool {
+        return i1 > i2;
+    }
+
+    public static inline function ge(i1: Int, i2: Int): Bool {
+        return i1 >= i2;
+    }
+
+    public static inline function isEven(i: Int): Bool {
+        return i & 1 == 0;
+    }
+
+    public static inline function isOdd(i: Int): Bool {
+        return i & 1 == 1;
+    }
+
+    public static inline function min(i1: Int, i2: Int): Int {
+        return i1 <= i2 ? i1 : i2;
+    }
+
+    public static inline function max(i1: Int, i2: Int): Int {
+        return i1 >= i2 ? i1 : i2;
+    }
+
+    public static inline function abs(i: Int): Int {
+        return i < 0 ? -i : i;
+    }
+
+    public static inline function toStr(i: Int): String {
+        return '$i';
+    }
+
+    public static inline function toRepr(i: Int): String {
+        return '${i}i';
+    }
+
+    public static inline function sign(i: Int): Int {
+        return if (i > 0) {
+            1;
+        } else if (i < 0) {
+            -1;
+        } else {
+            0;
+        }
+    }
+
+    public static inline function asFloat(i: Int): Float {
+        return i;
+    }
+
+    public static inline function asInt32(i: Int): Int32 {
+        return i;
+    }
+
+    public static inline function hash(i: Int, hasher: Hasher): Void {
+        hasher.addInt32(i);
+    }
+}

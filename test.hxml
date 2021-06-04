@@ -1,0 +1,13 @@
+-cp src
+
+-L utest
+-L tink_core
+
+-main tests.RunTests
+--interp
+
+--dce full
+-D analyzer-optimize
+# -D no-inline # leaving this for easier debugging
+
+--macro nullSafety("fount", Strict)
