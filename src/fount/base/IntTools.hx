@@ -7,6 +7,24 @@ using fount.Core;
 class IntTools {
     public static inline final MIN: Int32 = 0x80000000;
     public static inline final MAX: Int32 = 0x7fffffff;
+    static final HEXSYM_LUT: Array<Int> = [
+        "0".code,
+        "1".code,
+        "2".code,
+        "3".code,
+        "4".code,
+        "5".code,
+        "6".code,
+        "7".code,
+        "8".code,
+        "9".code,
+        "a".code,
+        "b".code,
+        "c".code,
+        "d".code,
+        "e".code,
+        "f".code
+    ];
 
     public static inline function eq(i1: Int, i2: Int): Bool {
         return i1 == i2;
@@ -62,6 +80,20 @@ class IntTools {
 
     public static inline function toRepr(i: Int): String {
         return '${i}i';
+    }
+
+    public static function toHexStr(i: Int): String {
+        final buf = new StringBuf();
+        while (i > 0) {
+            buf.addChar(HEXSYM_LUT[i & 0xf]);
+            i >>>= 4;
+        }
+        while (buf.length < 1) buf.addChar("0".code);
+        return buf.toString().reverse();
+    }
+
+    public static function toHexRepr(i: Int): String {
+        return '0x${i.toHexStr()}';
     }
 
     public static inline function sign(i: Int): Int {
