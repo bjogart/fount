@@ -355,6 +355,11 @@ class TestIntTools implements ITest {
         Assert.isFalse(5.ne(5));
     }
 
+    function test_toHexStr_on_negative_values() {
+        Assert.equals("ffffffff", (-1).toHexStr());
+        Assert.equals("fffffffe", (-2).toHexStr());
+    }
+
     function test_toHexStr_on_values() {
         for (i => str in HEX_VALUES) Assert.equals(str, i.toHexStr());
     }

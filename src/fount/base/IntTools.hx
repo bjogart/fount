@@ -84,7 +84,7 @@ class IntTools {
 
     public static function toHexStr(i: Int): String {
         final buf = new StringBuf();
-        while (i > 0) {
+        while (i != 0) {
             buf.addChar(HEXSYM_LUT[i & 0xf]);
             i >>>= 4;
         }
