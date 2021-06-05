@@ -12,7 +12,7 @@
         "Option"
     ],
     "description": "Static extensions, interfaces & utility functions for idiomatic programming.",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "releasenote": "Initial release",
     "classPath": "src/",
     "contributors": [

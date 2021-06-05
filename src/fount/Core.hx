@@ -6,6 +6,7 @@ typedef Display = fount.base.Display;
 typedef Eq<T> = fount.base.Eq<T>;
 typedef EqTools = fount.base.Eq.EqTools;
 typedef FloatTools = fount.base.FloatTools;
+typedef FunctionTools = fount.base.FunctionTools;
 typedef Hash = fount.base.Hash;
 typedef Hasher = fount.base.Hash.Hasher;
 typedef IDebug = fount.base.Debug.IDebug;
