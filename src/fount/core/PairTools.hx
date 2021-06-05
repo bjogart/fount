@@ -1,4 +1,4 @@
-package fount.base;
+package fount.core;
 
 using tink.CoreApi;
 using fount.Core;

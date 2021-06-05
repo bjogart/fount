@@ -1,4 +1,4 @@
-package fount.base;
+package fount.core;
 
 import haxe.io.Bytes;
 import haxe.Int32;

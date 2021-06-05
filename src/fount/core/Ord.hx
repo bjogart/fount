@@ -1,4 +1,4 @@
-package fount.base;
+package fount.core;
 
 typedef Ord<T> = {
     function cmp(o: T): Int;

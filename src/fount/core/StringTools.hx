@@ -1,4 +1,4 @@
-package fount.base;
+package fount.core;
 
 import haxe.iterators.StringIteratorUnicode;
 

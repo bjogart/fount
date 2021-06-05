@@ -1,4 +1,4 @@
-package fount.base;
+package fount.core;
 
 typedef Eq<T> = {
     function eq(o: T): Bool;

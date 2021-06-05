@@ -1,4 +1,4 @@
-package fount.base;
+package fount.core;
 
 class FunctionTools {
     public static inline function let<T, R>(v: T, fun: T -> R): R {

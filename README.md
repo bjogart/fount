@@ -1,5 +1,5 @@
 # A fount of static extensions
-Fount contains types and extensions I felt where missing from the standard library. Find them in `fount.base.*`, or import everything with `using fount.Core`.
+Fount contains types and extensions I felt where missing from the standard library. Find them in `fount.core.*`, or import everything with `using fount.Core`.
 
 Fount is the result of me tidying up my previous utility library, [Ingot](https://github.com/BJogart/ingot). There is---and for the time being, will be---little in the way of documentation; I don't have that kind of spare time at the time of writing. Feel free to shoot me a message if you're interested though.
 

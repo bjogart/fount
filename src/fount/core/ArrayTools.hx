@@ -1,4 +1,4 @@
-package fount.base;
+package fount.core;
 
 class ArrayTools {
     public static function getOrSet<T>(arr: Array<T>, idx: Int, defVal: () -> T): T {

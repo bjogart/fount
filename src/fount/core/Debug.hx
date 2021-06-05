@@ -1,4 +1,4 @@
-package fount.base;
+package fount.core;
 
 typedef Debug = {
     function toRepr(): String;
