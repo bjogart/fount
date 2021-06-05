@@ -1,5 +1,6 @@
 package fount;
 
+typedef ArrayTools = fount.core.ArrayTools;
 typedef BoolTools = fount.core.BoolTools;
 typedef Debug = fount.core.Debug;
 typedef Display = fount.core.Display;
