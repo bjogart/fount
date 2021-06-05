@@ -1,0 +1,26 @@
+{
+    "name": "fount",
+    "url": "https://github.com/BJogart/fount",
+    "license": "MIT",
+    "tags": [
+        "static-extensions",
+        "using",
+        "equality",
+        "hash",
+        "comparison",
+        "null-safe",
+        "Option"
+    ],
+    "description": "Static extensions, interfaces & utility functions for idiomatic programming.",
+    "version": "0.0.1",
+    "releasenote": "Initial release",
+    "classPath": "src/",
+    "contributors": [
+        "BJogart"
+    ],
+    "dependencies": {
+        "utest": "1.13.2",
+        "tink_core": "2.0.2"
+    },
+    "main": "tests.RunTests"
+}
