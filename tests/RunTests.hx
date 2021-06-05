@@ -10,8 +10,6 @@ function main(): Void {
     runner.addCase(new TestIntTools());
     runner.addCase(new TestOptionTools());
     runner.addCase(new TestPairTools());
-    runner.addCase(new TestQueue());
-    runner.addCase(new TestStack());
     runner.addCase(new TestStringTools());
 
     Report.create(runner);

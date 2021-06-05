@@ -1,8 +1,6 @@
 package fount;
 
 typedef BoolTools = fount.base.BoolTools;
-typedef Buffer<T> = fount.base.Buffer<T>;
-typedef BufferTools = fount.base.Buffer.BufferTools;
 typedef Debug = fount.base.Debug;
 typedef Display = fount.base.Display;
 typedef Eq<T> = fount.base.Eq<T>;
@@ -10,7 +8,6 @@ typedef EqTools = fount.base.Eq.EqTools;
 typedef FloatTools = fount.base.FloatTools;
 typedef Hash = fount.base.Hash;
 typedef Hasher = fount.base.Hash.Hasher;
-typedef IBuffer<T> = fount.base.Buffer.IBuffer<T>;
 typedef IDebug = fount.base.Debug.IDebug;
 typedef IDisplay = fount.base.Display.IDisplay;
 typedef IEq<T> = fount.base.Eq.IEq<T>;
@@ -23,6 +20,4 @@ typedef OptionTools = fount.base.OptionTools;
 typedef Ord<T> = fount.base.Ord<T>;
 typedef OrdTools = fount.base.Ord.OrdTools;
 typedef PairTools = fount.base.PairTools;
-typedef Queue<T> = fount.base.Queue<T>;
-typedef Stack<T> = fount.base.Stack<T>;
 typedef StringTools = fount.base.StringTools;
