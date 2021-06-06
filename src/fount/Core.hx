@@ -21,5 +21,6 @@ typedef Option<T> = haxe.ds.Option<T>;
 typedef OptionTools = fount.core.OptionTools;
 typedef Ord<T> = fount.core.Ord<T>;
 typedef OrdTools = fount.core.Ord.OrdTools;
+typedef OutcomeTools = fount.core.OutcomeTools;
 typedef PairTools = fount.core.PairTools;
 typedef StringTools = fount.core.StringTools;
