@@ -43,8 +43,9 @@ class StringTools {
     public static inline function toStr(str: String): String {
         return str;
     }
+
     public static inline function toRepr(str: String): String {
-        return '"${str.toRepr()}"';
+        return '"$str"';
     }
 
     public static function eq(s1: String, s2: String): Bool {
