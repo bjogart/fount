@@ -40,6 +40,9 @@ class StringTools {
         return str.replace(~/\\/g, "\\\\").replace(~/\t/g, "\\t").replace(~/\r/g, "\\r").replace(~/\n/g, "\\n").replace(~/"/g, '\\"');
     }
 
+    public static inline function toStr(str: String): String {
+        return str;
+    }
     public static inline function toRepr(str: String): String {
         return '"${str.toRepr()}"';
     }
