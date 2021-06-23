@@ -119,14 +119,14 @@ class Sip24 implements IHasher {
         state.v2 = state.v2.rol(32);
     }
 
-    public inline function compress(word: Int64): Void {
+    inline function compress(word: Int64): Void {
         state.v3 ^= word;
         transform();
         transform();
         state.v0 ^= word;
     }
 
-    public inline function finalize(): Int64 {
+    inline function finalize(): Int64 {
         state.v2 ^= 0xff;
         transform();
         transform();
