@@ -1,4 +1,4 @@
-package tests.ds;
+package tests.data;
 
 using fount.Core;
 

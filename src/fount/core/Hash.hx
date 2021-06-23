@@ -1,8 +1,6 @@
 package fount.core;
 
 import haxe.io.BytesBuffer;
-import haxe.Int32;
-import haxe.Int64;
 
 using fount.Core;
 

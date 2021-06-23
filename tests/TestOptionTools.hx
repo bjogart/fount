@@ -1,6 +1,6 @@
 package tests;
 
-import tests.ds.Obj;
+import tests.data.Obj;
 import utest.Assert;
 import utest.ITest;
 

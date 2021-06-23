@@ -1,7 +1,5 @@
 package fount.core;
 
-import haxe.Int64;
-
 using fount.Core;
 
 class Int64Tools {
@@ -51,10 +49,12 @@ class Int64Tools {
     }
 
     public static inline function rol(i: Int64, b: Int): Int64 {
+        final b = b & 63;
         return (i << b) | (i >>> (64 - b));
     }
 
     public static inline function ror(i: Int64, b: Int): Int64 {
+        final b = b & 63;
         return (i >>> b) | (i << (64 - b));
     }
 }

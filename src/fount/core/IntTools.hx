@@ -1,8 +1,5 @@
 package fount.core;
 
-import haxe.Int64;
-import haxe.Int32;
-
 using fount.Core;
 
 class IntTools {
@@ -124,10 +121,12 @@ class IntTools {
     }
 
     public static inline function rol(i: Int32, b: Int): Int32 {
+        final b = b & 31;
         return (i << b) | (i >>> (32 - b));
     }
 
     public static inline function ror(i: Int32, b: Int): Int32 {
+        final b = b & 31;
         return (i >>> b) | (i << (32 - b));
     }
 }

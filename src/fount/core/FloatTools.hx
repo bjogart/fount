@@ -1,8 +1,6 @@
 package fount.core;
 
 import haxe.io.Bytes;
-import haxe.Int32;
-
 using fount.Core;
 
 class FloatTools {

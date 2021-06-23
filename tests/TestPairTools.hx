@@ -2,7 +2,7 @@ package tests;
 
 import utest.Assert;
 import utest.ITest;
-import tests.ds.Obj;
+import tests.data.Obj;
 
 using tink.CoreApi;
 using fount.Core;
@@ -127,6 +127,6 @@ class TestPairTools implements ITest {
 
     function test_toRepr_with_nonnil_pair() {
         final p = new Pair(new Obj(0), new Obj(1));
-        Assert.equals("Pair(Obj(0i), Obj(1i))", p.toRepr());
+        Assert.equals("Pair(Obj(0i32), Obj(1i32))", p.toRepr());
     }
 }
