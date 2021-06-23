@@ -93,9 +93,7 @@ class Sip24 implements IHasher {
         buf.addByte(wordCount & 0xff);
 
         // compression
-        trace(buf.length);
         final data = buf.getBytes();
-        trace(data.length);
         for (i in 0...wordCount) {
             final w = data.getInt64(8 * i);
             compress(w);
