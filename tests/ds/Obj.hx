@@ -14,7 +14,7 @@ class Obj implements IEq<Obj> implements IHash implements IOrd<Obj> implements I
     }
 
     public function hash(hasher: Hasher): Void {
-        hasher.addInt32(i);
+        hasher.i32(i);
     }
 
     public function cmp(o: Obj): Int {

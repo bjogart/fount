@@ -81,6 +81,6 @@ class StringTools {
     }
 
     public static function hash(s: String, hasher: Hasher): Void {
-        for (c in s.iterator()) hasher.addInt32(c);
+        hasher.str(s);
     }
 }

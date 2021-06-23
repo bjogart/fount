@@ -50,7 +50,7 @@ class FloatTools {
     public static function hash(f: Float, hasher: Hasher): Void {
         final bytes = Bytes.alloc(8);
         bytes.setDouble(0, f);
-        hasher.addInt64(bytes.getInt64(0));
+        hasher.i64(bytes.getInt64(0));
     }
 
     public static inline function min(f1: Float, f2: Float): Float {
