@@ -1,5 +1,6 @@
 package fount.core;
 
+import haxe.Int64;
 import haxe.Int32;
 
 using fount.Core;
@@ -79,7 +80,7 @@ class IntTools {
     }
 
     public static inline function toRepr(i: Int): String {
-        return '${i}i';
+        return '${i}i32';
     }
 
     public static function toHexStr(i: Int): String {
@@ -88,11 +89,11 @@ class IntTools {
             buf.addChar(HEXSYM_LUT[i & 0xf]);
             i >>>= 4;
         }
-        while (buf.length < 1) buf.addChar("0".code);
+        while (buf.length < 8) buf.addChar("0".code);
         return buf.toString().reverse();
     }
 
-    public static function toHexRepr(i: Int): String {
+    public static inline function toHexRepr(i: Int): String {
         return '0x${i.toHexStr()}';
     }
 
@@ -114,7 +115,19 @@ class IntTools {
         return i;
     }
 
+    public static inline function asInt64(i: Int): Int64 {
+        return Int64.ofInt(i);
+    }
+
     public static inline function hash(i: Int, hasher: Hasher): Void {
-        hasher.addInt32(i);
+        hasher.i32(i);
+    }
+
+    public static inline function rol(i: Int32, b: Int): Int32 {
+        return (i << b) | (i >>> (32 - b));
+    }
+
+    public static inline function ror(i: Int32, b: Int): Int32 {
+        return (i >>> b) | (i << (32 - b));
     }
 }
