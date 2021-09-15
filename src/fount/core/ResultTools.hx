@@ -14,4 +14,11 @@ class ResultTools {
             case Err(errValue): throw onErr(errValue);
         }
     }
+
+    public static function map<T, E, R>(result: Result<T, E>, mapFn: T -> R): Result<R, E> {
+        return switch result {
+            case Ok(okValue): Ok(mapFn(okValue));
+            case Err(errValue): Err(errValue);
+        }
+    }
 }
