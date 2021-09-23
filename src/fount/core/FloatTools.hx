@@ -1,6 +1,7 @@
 package fount.core;
 
 import haxe.io.Bytes;
+
 using fount.Core;
 
 class FloatTools {
@@ -10,8 +11,16 @@ class FloatTools {
         return (f1 - f2).abs() <= ROUNDOFF;
     }
 
+    public static inline function eqBy(f1: Float, f2: Float, roundoff: Float): Bool {
+        return (f1 - f2).abs() <= roundoff;
+    }
+
     public static inline function ne(f1: Float, f2: Float): Bool {
         return (f1 - f2).abs() > ROUNDOFF;
+    }
+
+    public static inline function neBy(f1: Float, f2: Float, roundoff: Float): Bool {
+        return (f1 - f2).abs() > roundoff;
     }
 
     public static inline function cmp(f1: Float, f2: Float): Int32 {
