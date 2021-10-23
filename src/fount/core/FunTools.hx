@@ -9,4 +9,8 @@ class FunTools {
         fun(v);
         return v;
     }
+
+    public static inline function id<T>(v: T): T {
+        return v;
+    }
 }
