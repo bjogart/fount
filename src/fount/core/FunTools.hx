@@ -1,6 +1,6 @@
 package fount.core;
 
-class FunctionTools {
+class FunTools {
     public static inline function let<T, R>(v: T, fun: T -> R): R {
         return fun(v);
     }
