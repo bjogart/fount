@@ -15,10 +15,17 @@ class ResultTools {
         }
     }
 
-    public static function map<T, E, R>(result: Result<T, E>, mapFn: T -> R): Result<R, E> {
+    public static function map<T, E, R>(result: Result<T, E>, op: T -> R): Result<R, E> {
         return switch result {
-            case Ok(okValue): Ok(mapFn(okValue));
+            case Ok(okValue): Ok(op(okValue));
             case Err(errValue): Err(errValue);
+        }
+    }
+
+    public static function mapOrElse<T, E, R, F>(res: Result<T, E>, onOk: T -> R, onErr: E -> F): Result<R, F> {
+        return switch res {
+            case Ok(okVal): Ok(onOk(okVal));
+            case Err(errVal): Err(onErr(errVal));
         }
     }
 }
