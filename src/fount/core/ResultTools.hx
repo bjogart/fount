@@ -28,4 +28,11 @@ class ResultTools {
             case Err(errVal): Err(onErr(errVal));
         }
     }
+
+    public static function flatten<T, E>(res: Result<Result<T, E>, E>): Result<T, E> {
+        return switch res {
+            case Ok(Ok(v)): Ok(v);
+            case Ok(Err(v)) | Err(v): Err(v);
+        }
+    }
 }
