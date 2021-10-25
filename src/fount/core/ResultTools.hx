@@ -22,7 +22,7 @@ class ResultTools {
         }
     }
 
-    public static function mapOrElse<T, E, R, F>(res: Result<T, E>, onOk: T -> R, onErr: E -> F): Result<R, F> {
+    public static function mapOrElse<T, R, E, F>(res: Result<T, E>, onOk: T -> R, onErr: E -> F): Result<R, F> {
         return switch res {
             case Ok(okVal): Ok(onOk(okVal));
             case Err(errVal): Err(onErr(errVal));
