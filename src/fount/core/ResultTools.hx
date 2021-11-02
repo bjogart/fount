@@ -29,6 +29,13 @@ class ResultTools {
         }
     }
 
+    public static function mapEither<T, R, E, F>(res: Result<T, E>, onOk: T -> R, onErr: E -> F): Result<R, F> {
+        return switch res {
+            case Ok(okValue): Ok(onOk(okValue));
+            case Err(errValue): Err(onErr(errValue));
+        }
+    }
+
     public static function andThen<T, E, R>(result: Result<T, E>, op: T -> Result<R, E>): Result<R, E> {
         return switch result {
             case Ok(okValue): op(okValue);
