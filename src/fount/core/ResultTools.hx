@@ -15,7 +15,7 @@ class ResultTools {
         }
     }
 
-    public static function map<T, E, R>(result: Result<T, E>, op: T -> R): Result<R, E> {
+    public static function mapOk<T, E, R>(result: Result<T, E>, op: T -> R): Result<R, E> {
         return switch result {
             case Ok(okValue): Ok(op(okValue));
             case Err(errValue): Err(errValue);
@@ -29,30 +29,27 @@ class ResultTools {
         }
     }
 
-    public static function mapEither<T, R, E, F>(res: Result<T, E>, onOk: T -> R, onErr: E -> F): Result<R, F> {
+    public static function map<T, R, E, F>(res: Result<T, E>, onOk: T -> R, onErr: E -> F): Result<R, F> {
         return switch res {
             case Ok(okValue): Ok(onOk(okValue));
             case Err(errValue): Err(onErr(errValue));
         }
     }
 
-    public static function andThen<T, E, R>(result: Result<T, E>, op: T -> Result<R, E>): Result<R, E> {
-        return switch result {
+    public static function then<T, E, R>(res: Result<T, E>, op: T -> Result<R, E>): Result<R, E> {
+        return switch res {
             case Ok(okValue): op(okValue);
             case Err(errValue): Err(errValue);
         }
     }
 
-    // public static function mapOrElse<T, R, E, F>(res: Result<T, E>, onOk: T -> R, onErr: E -> F): Result<R, F> {
-    //     return switch res {
-    //         case Ok(okVal): Ok(onOk(okVal));
-    //         case Err(errVal): Err(onErr(errVal));
-    //     }
-    // }
-    // public static function flatten<T, E>(res: Result<Result<T, E>, E>): Result<T, E> {
-    //     return switch res {
-    //         case Ok(Ok(v)): Ok(v);
-    //         case Ok(Err(v)) | Err(v): Err(v);
-    //     }
-    // }
+    public static function pipe<T, R, E, F>(res: Result<T, E>, op: T -> Result<R, E>, onErr: E -> F): Result<R, F> {
+        return switch res {
+            case Ok(val): switch op(val) {
+                    case Ok(val): Ok(val);
+                    case Err(val): Err(onErr(val));
+                }
+            case Err(val): Err(onErr(val));
+        }
+    }
 }
