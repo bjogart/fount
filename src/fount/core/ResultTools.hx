@@ -43,13 +43,10 @@ class ResultTools {
         }
     }
 
-    public static function pipe<T, R, E, F>(res: Result<T, E>, op: T -> Result<R, E>, onErr: E -> F): Result<R, F> {
+    public static function flatten<T, E>(res: Result<Result<T, E>, E>): Result<T, E> {
         return switch res {
-            case Ok(val): switch op(val) {
-                    case Ok(val): Ok(val);
-                    case Err(val): Err(onErr(val));
-                }
-            case Err(val): Err(onErr(val));
+            case Ok(val): val;
+            case Err(err): Err(err);
         }
     }
 }
