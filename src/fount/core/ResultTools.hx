@@ -48,5 +48,10 @@ class ResultTools {
             case Ok(val): val;
             case Err(err): Err(err);
         }
+    }macro public static inline function tryGet<T, E>(res: ExprOf<Result<T, E>>): ExprOf<T> {
+        return macro switch $e{res} {
+            case Ok(val): val;
+            case Err(err): return Err(err);
+        }
     }
 }
